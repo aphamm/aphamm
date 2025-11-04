@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Atmamun",
+    "author": "Kapil Gupta",
+    "date": "April 3, 2025",
+    "rating": 9,
+    "coverImage": "/read/atmamun.png",
+    "slug": "/consumed/read/atmamun",
+    "summary": "/*@jsxRuntime automatic @jsxImportSource react*/\nconst {Fragment: _Fragment, jsx: _jsx, jsxs: _jsxs} = arguments[0];\nconst {useMDXComponents: _provideComponents} = arguments[0];\nfunction _createMdxContent(props) {\n  const _components = Object.assign({\n    p: \"p\"\n  }, _provideComponents(), props.components);\n  return _jsxs(_Fragment, {\n    children: [_jsx(_components.p, {\n      children: \"Freedom and bliss arise by dissolving mind, ego, and illusion.\"\n    }), \"\\n\", _jsx(_components.p, {\n      children: \"Enlightenment comes through direct awareness of truth beyond belief, effort, or conditioning.\"\n    })]\n  });\n}\nfunction MDXContent(props = {}) {\n  const {wrapper: MDXLayout} = Object.assign({}, _provideComponents(), props.components);\n  return MDXLayout ? _jsx(MDXLayout, Object.assign({}, props, {\n    children: _jsx(_createMdxContent, props)\n  })) : _createMdxContent(props);\n}\nreturn {\n  default: MDXContent\n};\n"
+  },
+  {
+    "title": "The Almanack of Naval Ravikant",
+    "author": "Eric Jorgenson",
+    "date": "October 22, 2023",
+    "rating": 8,
+    "coverImage": "/read/naval-ravikant.png",
+    "slug": "/consumed/read/naval-ravikant",
+    "summary": "/*@jsxRuntime automatic @jsxImportSource react*/\nconst {Fragment: _Fragment, jsx: _jsx, jsxs: _jsxs} = arguments[0];\nconst {useMDXComponents: _provideComponents} = arguments[0];\nfunction _createMdxContent(props) {\n  const _components = Object.assign({\n    p: \"p\"\n  }, _provideComponents(), props.components);\n  return _jsxs(_Fragment, {\n    children: [_jsx(_components.p, {\n      children: \"Wealth and happiness come from clear thinking, self-knowledge, and leverage.\"\n    }), \"\\n\", _jsx(_components.p, {\n      children: \"True success is built through judgment, curiosity, and freedom rather than money alone.\"\n    })]\n  });\n}\nfunction MDXContent(props = {}) {\n  const {wrapper: MDXLayout} = Object.assign({}, _provideComponents(), props.components);\n  return MDXLayout ? _jsx(MDXLayout, Object.assign({}, props, {\n    children: _jsx(_createMdxContent, props)\n  })) : _createMdxContent(props);\n}\nreturn {\n  default: MDXContent\n};\n"
+  },
+  {
+    "title": "Untethered Soul",
+    "author": "Michael Singer",
+    "date": "June 15, 2021",
+    "rating": 9,
+    "coverImage": "/read/untethered-soul.png",
+    "slug": "/consumed/read/untethered-soul",
+    "summary": "/*@jsxRuntime automatic @jsxImportSource react*/\nconst {Fragment: _Fragment, jsx: _jsx, jsxs: _jsxs} = arguments[0];\nconst {useMDXComponents: _provideComponents} = arguments[0];\nfunction _createMdxContent(props) {\n  const _components = Object.assign({\n    p: \"p\"\n  }, _provideComponents(), props.components);\n  return _jsxs(_Fragment, {\n    children: [_jsx(_components.p, {\n      children: \"Freedom comes from observing thoughts without attachment.\"\n    }), \"\\n\", _jsx(_components.p, {\n      children: \"Mindfulness and surrender reveal peace beyond fear or desire.\"\n    })]\n  });\n}\nfunction MDXContent(props = {}) {\n  const {wrapper: MDXLayout} = Object.assign({}, _provideComponents(), props.components);\n  return MDXLayout ? _jsx(MDXLayout, Object.assign({}, props, {\n    children: _jsx(_createMdxContent, props)\n  })) : _createMdxContent(props);\n}\nreturn {\n  default: MDXContent\n};\n"
+  }
+]

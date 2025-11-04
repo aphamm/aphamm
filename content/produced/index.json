@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Designing robust audio synchronization algorithms",
+    "description": "Improved alignment efficiency under extreme global time warping conditions",
+    "links": [
+      {
+        "label": "publication",
+        "href": "https://www.mdpi.com/2076-3417/14/4/1459"
+      }
+    ]
+  },
+  {
+    "title": "Building efficient models for one-shot timbre transfer",
+    "description": "Integrated Adaptive Instance Normalization with Mamba for music generalization",
+    "links": [
+      {
+        "label": "report",
+        "href": "/pdfs/mamba.pdf"
+      }
+    ]
+  },
+  {
+    "title": "Publishing large-scale research data for music information retrieval",
+    "description": "Collection of 10,000+ music images and symbolic data for composer recognition",
+    "links": [
+      {
+        "label": "publication",
+        "href": "https://transactions.ismir.net/articles/10.5334/tismir.185"
+      }
+    ]
+  },
+  {
+    "title": "Fixing a Power of Two Rounding Error",
+    "description": "Corrected a mathematical error in a widely used quantization technique",
+    "links": [
+      {
+        "label": "report",
+        "href": "/pdfs/hpml.pdf"
+      }
+    ]
+  },
+  {
+    "title": "Creating am Ad Campaign for Meta Quest 2",
+    "description": "Analyzed media spending strategy in coordination with creative strategy",
+    "links": [
+      {
+        "label": "book",
+        "href": "/pdfs/adteam.pdf"
+      }
+    ]
+  },
+  {
+    "title": "Profiling Computational Intensity of DNN Training",
+    "description": "Computation + memory bandwidth analysis across GPU architectures",
+    "links": [
+      {
+        "label": "report",
+        "href": "/pdfs/cuda.pdf"
+      }
+    ]
+  }
+]

@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://austinpham.com</loc>
+    <loc>https://aphamm.vercel.app</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://austinpham.com/produced</loc>
+    <loc>https://aphamm.vercel.app/produced</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://austinpham.com/consumed</loc>
+    <loc>https://aphamm.vercel.app/consumed</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://austinpham.com/consumed/read/atmamun</loc>
+    <loc>https://aphamm.vercel.app/consumed/read/atmamun</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://austinpham.com/consumed/read/naval-ravikant</loc>
+    <loc>https://aphamm.vercel.app/consumed/read/naval-ravikant</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://austinpham.com/consumed/read/untethered-soul</loc>
+    <loc>https://aphamm.vercel.app/consumed/read/untethered-soul</loc>
     <priority>0.6</priority>
   </url>
 </urlset>

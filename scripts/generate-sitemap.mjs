@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-const SITE_URL = "https://austinpham.com"; // Update this to your actual domain
+const SITE_URL = "https://aphamm.vercel.app"; // Update this to your actual domain
 
 function getConsumedSlugs() {
   try {

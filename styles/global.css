@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #fafafa;
+  --fg: #5c6166;
+  --muted: #abb0b6;
+  --accent: #ff9940;
+  --border: #d8d8d7;
+}
+
+body {
+  background: var(--bg);
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+a:hover {
+  color: var(--accent);
+}

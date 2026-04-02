@@ -5,6 +5,8 @@ export interface Write {
   title: string;
   image: string;
   description: string;
+  chars: string;
+  shape: string;
   links: {
     label: string;
     href: string;

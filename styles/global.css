@@ -5,26 +5,36 @@
 }
 
 :root {
-  --bg: #fafafa;
-  --fg: #5c6166;
-  --muted: #abb0b6;
-  --accent: #ff9940;
-  --border: #d8d8d7;
+  --bg: #f8f8f6;
+  --fg: #1a1a1a;
+  --muted: #999;
 }
 
 body {
   background: var(--bg);
-  color: var(--muted);
-  font-size: 14px;
+  color: var(--fg);
+  font-family: var(--font-signifier), Georgia, serif;
+  font-size: 12px;
   line-height: 1.6;
+  height: 100vh;
+  overflow: hidden;
 }
 
 a {
   color: var(--muted);
   text-decoration: none;
-  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: var(--font-signifier), Georgia, serif;
+  font-size: 11px;
+  transition: color 0.3s;
 }
 
 a:hover {
-  color: var(--accent);
+  color: var(--fg);
+}
+
+::selection {
+  background: #ddd;
+  color: #111;
 }

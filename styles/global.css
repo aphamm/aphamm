@@ -7,7 +7,7 @@
 :root {
   --bg: #f8f8f6;
   --fg: #1a1a1a;
-  --muted: #999;
+  --muted: #888;
 }
 
 body {
@@ -17,6 +17,7 @@ body {
   font-size: 12px;
   line-height: 1.6;
   height: 100vh;
+  height: 100dvh;
   overflow: hidden;
 }
 
@@ -28,6 +29,7 @@ a {
   font-family: var(--font-signifier), Georgia, serif;
   font-size: 11px;
   transition: color 0.3s;
+  cursor: pointer;
 }
 
 a:hover {
@@ -38,3 +40,15 @@ a:hover {
   background: #ddd;
   color: #111;
 }
+
+/* page-load animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes deblur {
+  from { opacity: 0; filter: blur(4px); }
+  to { opacity: 1; filter: blur(0); }
+}
+

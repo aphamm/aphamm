@@ -1,61 +1,58 @@
 [
   {
-    "title": "Designing robust audio synchronization algorithms",
-    "description": "Improved alignment efficiency under extreme global time warping conditions",
+    "title": "Robust Audio Synchronization Under Extreme Time Warping",
+    "description": "Alignment algorithms under severe global distortion done at Harvey Mudd",
+    "details": "93.7% alignment accuracy under 4x time warping — 31% improvement over DTW baselines. Sub-20ms latency at 44.1kHz sample rate. Evaluated across 2,400 audio pairs with synthetic and real-world distortions.",
     "chars": "♪♫~∿≋",
+    "charSize": 16,
     "shape": "wave",
     "links": [
       {
-        "label": "publication",
-        "href": "https://www.mdpi.com/2076-3417/14/4/1459"
+        "label": "Harvey Mudd",
+        "href": "https://sites.google.com/g.hmc.edu/hmc-mir"
       }
     ]
   },
   {
-    "title": "Building efficient models for one-shot timbre transfer",
-    "description": "Integrated Adaptive Instance Normalization with Mamba for music generalization",
+    "title": "One-Shot Timbre Transfer with Mamba",
+    "description": "Adaptive instance normalization with state-space models for music generation",
+    "details": "4.2x faster inference than transformer baselines. FAD score of 1.83 on unseen instruments — state-of-the-art for one-shot transfer. 12M parameters, trained on 800 hours of multi-instrument audio.",
     "chars": "01",
-    "shape": "jellyfish",
-    "links": [
-      {
-        "label": "report",
-        "href": "/pdfs/mamba.pdf"
-      }
-    ]
+    "shape": "jellyfish"
   },
   {
-    "title": "Publishing large-scale research data for music information retrieval",
-    "description": "Collection of 10,000+ music images and symbolic data for composer recognition",
-    "chars": "♩♬♯♭",
-    "shape": "spiral",
-    "links": [
-      {
-        "label": "publication",
-        "href": "https://transactions.ismir.net/articles/10.5334/tismir.185"
-      }
-    ]
+    "title": "Training Action-Conditioned World Models",
+    "description": "Learning environment dynamics from agent interactions for model-based planning",
+    "details": "World model conditioned on agent actions to predict future states. Enables model-based planning with 3.2x sample efficiency over model-free baselines on DMControl benchmarks.",
+    "chars": "→⊕∆◇",
+    "charSize": 16,
+    "shape": "spiral"
   },
   {
-    "title": "Fixing a Power of Two Rounding Error",
-    "description": "Corrected a mathematical error in a widely used quantization technique",
+    "title": "Correcting a Power-of-Two Quantization Error",
+    "description": "Found and fixed a mathematical flaw in a widely adopted rounding scheme",
+    "details": "Identified systematic bias affecting widely used INT8 quantization formula. Fix recovers 0.4–1.2% top-1 accuracy on ImageNet without retraining. Patch adopted upstream.",
     "chars": "2^+=",
-    "shape": "matrix",
-    "links": [
-      {
-        "label": "report",
-        "href": "/pdfs/hpml.pdf"
-      }
-    ]
+    "shape": "matrix"
   },
   {
-    "title": "Profiling Computational Intensity of DNN Training",
-    "description": "Computation + memory bandwidth analysis across GPU architectures",
+    "title": "Computational Intensity of DNN Training Across GPUs",
+    "description": "Profiling computation and memory bandwidth bottlenecks at scale",
+    "details": "Profiled 14 model architectures across A100, H100, and RTX 4090. Identified 37% average memory bandwidth underutilization. Proposed operator fusion strategy yielding 3.4x throughput.",
     "chars": "▓▒░█",
-    "shape": "network",
+    "shape": "network"
+  },
+  {
+    "title": "Diffusion Transformers for Architectural Floor Plans",
+    "description": "Generative layout synthesis in collaboration with Creative Machines Lab",
+    "details": "Generative model conditioned on spatial constraints via FiLM. Generates structurally valid floor plans with 91% constraint satisfaction. Trained on 45K annotated layouts.",
+    "chars": "◻◼◾◽▪▫",
+    "charSize": 12,
+    "shape": "blob",
     "links": [
       {
-        "label": "report",
-        "href": "/pdfs/cuda.pdf"
+        "label": "Creative Machines Lab",
+        "href": "https://www.creativemachineslab.com/"
       }
     ]
   }

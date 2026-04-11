@@ -2,6 +2,7 @@ import localFont from "@next/font/local";
 import type { AppProps } from "next/app";
 import { DefaultSeo } from "next-seo";
 import type { ReactElement } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import Layout from "../components/Layout";
 import "../styles/global.css";
 
@@ -27,8 +28,23 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <div className={signifier.variable}>
-      <DefaultSeo title="apham" />
+      <DefaultSeo
+        title="apham"
+        description="deep learning researcher"
+        openGraph={{
+          type: "website",
+          url: "https://apham.sh",
+          title: "apham",
+          description: "deep learning researcher",
+          images: [{ url: "https://apham.sh/opengraph-image.jpeg" }],
+        }}
+        twitter={{
+          handle: "@austinphamm",
+          cardType: "summary_large_image",
+        }}
+      />
       {getLayout(<Component {...pageProps} />)}
+      <Analytics />
     </div>
   );
 }

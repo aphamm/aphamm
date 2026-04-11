@@ -1,8 +1,4 @@
-export type ShapeFn = (
-  nx: number,
-  ny: number,
-  t: number,
-) => number;
+export type ShapeFn = (nx: number, ny: number, t: number) => number;
 
 export const shapes: Record<string, ShapeFn> = {
   jellyfish: (nx, ny, t) => {
@@ -62,7 +58,10 @@ export const shapes: Record<string, ShapeFn> = {
       const thickness = 0.015 + Math.sin(nx * 8 + t + layer) * 0.005;
       const intensity = Math.max(0, 1 - dist / thickness);
       // fill underneath the top wave
-      const fill = layer === 0 && ny > centerY ? Math.max(0, 1 - (ny - centerY) / 0.3) * 0.15 : 0;
+      const fill =
+        layer === 0 && ny > centerY
+          ? Math.max(0, 1 - (ny - centerY) / 0.3) * 0.15
+          : 0;
       val += intensity * (0.8 - layer * 0.1) + fill;
     }
     return Math.min(1, val);
@@ -191,7 +190,8 @@ export const shapes: Record<string, ShapeFn> = {
     }
 
     // random background flickers
-    const flicker = Math.sin(nx * 80 + ny * 60 + t * 4) * Math.sin(nx * 30 - t * 2);
+    const flicker =
+      Math.sin(nx * 80 + ny * 60 + t * 4) * Math.sin(nx * 30 - t * 2);
     if (flicker > 0.95) val += 0.15;
 
     return Math.min(1, val);
@@ -202,9 +202,18 @@ export const shapes: Record<string, ShapeFn> = {
     let val = 0;
     const blobs = [
       { x: 0.5 + Math.sin(t * 0.7) * 0.15, y: 0.5 + Math.cos(t * 0.9) * 0.12 },
-      { x: 0.35 + Math.sin(t * 1.1 + 2) * 0.1, y: 0.4 + Math.cos(t * 0.8 + 1) * 0.15 },
-      { x: 0.65 + Math.sin(t * 0.9 + 4) * 0.12, y: 0.6 + Math.cos(t * 1.2 + 3) * 0.1 },
-      { x: 0.45 + Math.sin(t * 1.3 + 1) * 0.08, y: 0.55 + Math.cos(t * 0.6 + 5) * 0.13 },
+      {
+        x: 0.35 + Math.sin(t * 1.1 + 2) * 0.1,
+        y: 0.4 + Math.cos(t * 0.8 + 1) * 0.15,
+      },
+      {
+        x: 0.65 + Math.sin(t * 0.9 + 4) * 0.12,
+        y: 0.6 + Math.cos(t * 1.2 + 3) * 0.1,
+      },
+      {
+        x: 0.45 + Math.sin(t * 1.3 + 1) * 0.08,
+        y: 0.55 + Math.cos(t * 0.6 + 5) * 0.13,
+      },
     ];
 
     for (const b of blobs) {
@@ -219,6 +228,96 @@ export const shapes: Record<string, ShapeFn> = {
     // surface detail
     const detail = Math.sin(nx * 30 + t) * Math.sin(ny * 25 - t * 0.7) * 0.15;
 
-    return Math.min(1, edge + (val > 2.8 && val < 3.2 ? 0.6 : 0) + (edge > 0 ? detail : 0));
+    return Math.min(
+      1,
+      edge + (val > 2.8 && val < 3.2 ? 0.6 : 0) + (edge > 0 ? detail : 0),
+    );
+  },
+
+  floorplan: (nx, ny, t) => {
+    const wallW = 0.035;
+    const b = Math.sin(t * 0.3) * 0.015;
+
+    const hWall = (x: number, y: number, x1: number, x2: number, yw: number) =>
+      x >= x1 && x <= x2 && Math.abs(y - yw) < wallW ? 1 : 0;
+    const vWall = (x: number, y: number, xw: number, y1: number, y2: number) =>
+      y >= y1 && y <= y2 && Math.abs(x - xw) < wallW ? 1 : 0;
+
+    // door gap check
+    const gap = (pos: number, center: number, width: number) =>
+      Math.abs(pos - center) < width;
+
+    // bounds
+    const L = 0.08;
+    const R = 0.92;
+    const T = 0.06;
+    const B = 0.94;
+
+    // main dividers
+    const midY = 0.42 + b;
+    const midX = 0.5 + b * 0.5;
+    const lowY = 0.72 + b;
+
+    let val = 0;
+
+    // outer walls
+    val += hWall(nx, ny, L, R, T);
+    val += hWall(nx, ny, L, R, B);
+    val += vWall(nx, ny, L, T, B);
+    val += vWall(nx, ny, R, T, B);
+
+    // main horizontal split
+    val += hWall(nx, ny, L, R, midY);
+    // vertical split — top half
+    val += vWall(nx, ny, midX, T, midY);
+    // vertical split — bottom left
+    const blDiv = 0.35 + b;
+    val += vWall(nx, ny, blDiv, midY, B);
+    // lower horizontal — right side
+    val += hWall(nx, ny, blDiv, R, lowY);
+    // small room — bottom right
+    const brDiv = 0.7 - b;
+    val += vWall(nx, ny, brDiv, lowY, B);
+
+    // hallway horizontal
+    const hallY = 0.56 + b;
+    val += hWall(nx, ny, blDiv, midX + 0.08, hallY);
+
+    // closet wall top-left
+    const closetX = 0.28;
+    val += vWall(nx, ny, closetX, T, 0.22);
+    val += hWall(nx, ny, closetX, midX, 0.22);
+
+    // door gaps — carve openings
+    const doors: [number, number, boolean][] = [
+      [0.3, midY, true], // top-left to bottom
+      [0.7, midY, true], // top-right to bottom
+      [midX, 0.25, false], // between top rooms
+      [blDiv, 0.58, false], // hallway to left room
+      [blDiv, 0.82, false], // bottom-left entry
+      [0.52, lowY, true], // into bottom-mid room
+      [brDiv, 0.83, false], // bottom-right entry
+      [0.48, hallY, true], // hallway door
+      [closetX, 0.12, false], // closet door
+    ];
+
+    for (const [dx, dy, horiz] of doors) {
+      if (horiz) {
+        if (gap(nx, dx, 0.05) && Math.abs(ny - dy) < wallW * 1.8) val = 0;
+      } else {
+        if (gap(ny, dy, 0.05) && Math.abs(nx - dx) < wallW * 1.8) val = 0;
+      }
+    }
+
+    // door swing arcs — quarter circle hints
+    const arcIntensity = 0.3;
+    for (const [dx, dy] of doors) {
+      const dist = Math.sqrt((nx - dx) ** 2 + (ny - dy) ** 2);
+      if (dist > 0.04 && dist < 0.06 && Math.abs(dist - 0.05) < 0.004) {
+        val = Math.max(val, arcIntensity);
+      }
+    }
+
+    return Math.min(1, val);
   },
 };
